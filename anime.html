@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.discordapp.com/attachments/943807857189584916/1105182586550091787/7005-modified.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="gmx.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Anime | Image Fetcher</title>
+  </head>
+  <body>
+    <h1 style="color: #333">© Biryani | All Rights Reserved</h1>
+    <div class="panel"></div>
+    <label for="category">Choose a category:</label>
+    <select name="cars" id="category">
+      <option value="waifu">Waifu</option>
+      <option value="neko">Neko</option>
+      <option value="blowjob">Blowjob</option>
+    </select>
+
+    <button class="fetch" id="fetcher">Fetch Image</button>
+    <script>
+      const fetchBtn = document.getElementById("fetcher");
+      const categorySelect = document.getElementById("category");
+      const imageContainer = document.querySelector(".panel");
+
+      fetchBtn.addEventListener("click", () => {
+        const category = categorySelect.value;
+        const apiUrl = `https://api.waifu.pics/nsfw/${category}`;
+        console.log(apiUrl);
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const imageUrl = data.url;
+            const image = document.createElement("img");
+            image.src = imageUrl;
+            imageContainer.innerHTML = "";
+            imageContainer.appendChild(image);
+          })
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>
