@@ -1,109 +1,71 @@
-body {
-  background-color: #dadada;
-  font-family: "Open Sans", sans-serif;
-  text-decoration: solid;
-  font-weight: 700;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* 
+fontcolor: #EEE0CB
+backgroundofbutton: #BAA898
+*/
+
+* {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
-.panel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 700px;
-  background-color: #333;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-}
-.panel img {
-  max-width: 900px;
-  max-height: 700px;
+
+.selectbox {
+  color: #eee0cb;
+  margin: 15px;
+  padding: 5px;
+  font-size: medium;
 }
 
 #category {
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 5px;
+  color: #eee0cb;
+  font-size: medium;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 6px;
 }
-#category:focus {
-  outline: none;
-  border-color: #60a2cf;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+
+.card {
+  background-color: #272626f9;
+  width: 900px;
+  height: 590px;
+  border-radius: 6px;
+  margin-left: 22%;
+  box-shadow: 0 20px 30px rgba(183, 45, 237, 0.45);
+}
+
+.card img {
+  width: 900px;
+  height: 590px;
 }
 
 .fetch {
+  color: #eee0cb;
+  font-size: medium;
+  cursor: pointer;
+  border: 1px solid;
   border-radius: 10px;
-  position: absolute;
-  bottom: 5%;
-  left: 1%;
-  padding: 5px;
-  background-color: #333;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  margin-left: 15px;
 }
 
-.download {
-  border-radius: 10px;
-  position: absolute;
-  bottom: 5%;
-  right: 1%;
-  padding: 5px;
-  background-color: #333;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-}
-.redirecter {
-  border-radius: 10px;
-  position: absolute;
-  top: 5%;
-  right: 1%;
-  padding: 5px;
-  background-color: #333;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-}
-/* Media Queries */
-@media (max-width: 1200px) {
-  .panel {
-    width: 700px;
-    height: 500px;
-  }
-
-  .panel img {
-    max-width: 700px;
-    max-height: 500px;
-  }
+.fetch:hover {
+  transition: 0.4s;
+  transform: translateY(-5px);
 }
 
-@media (max-width: 768px) {
-  .panel {
-    width: 400px;
-    height: 300px;
-  }
-
-  .panel img {
-    max-width: 400px;
-    max-height: 300px;
-  }
-
-  .fetch,
-  .download {
-    font-size: 14px;
-    padding: 3px;
-  }
-}
-
-@media (max-width: 576px) {
-  .panel {
-    width: 300px;
-    height: 200px;
-  }
-
-  .panel img {
-    max-width: 300px;
-    max-height: 200px;
-  }
-
-  .fetch,
-  .download {
-    font-size: 12px;
-    padding: 2px;
+@media screen and (max-width: 500px) {
+  .card {
+    background-color: #272626f9;
+    width: 347px;
+    height: 526px;
+    border-radius: 6px;
+    margin-left: 3%;
+    box-shadow: 0 20px 30px rgba(183, 45, 237, 0.45);
   }
 }
